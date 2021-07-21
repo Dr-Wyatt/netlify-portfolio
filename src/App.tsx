@@ -1,8 +1,7 @@
 import { Grid } from "@material-ui/core";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import Section from "./Components/Section";
-import { dummyText } from "./Utilities/dummyText";
+import ProjectCard from "./Components/ProjectCard";
 
 const App = () => {
   return (
@@ -11,29 +10,14 @@ const App = () => {
         <Navbar />
         This is Front Page
         <Grid container item style={{ justifyContent: "center" }}>
-          <Grid item xs={7}>
-            <Section
-              title="Section 1"
-              subtitle={dummyText}
-              dark={false}
-              id="one"
-            />
+          <Grid item xs={4} style={{ padding: "10px" }}>
+            <ProjectCard title="blue" backgroundColor="blue" />
           </Grid>
-          <Grid item xs={7}>
-            <Section
-              title="Section 2"
-              subtitle={dummyText}
-              dark={false}
-              id="two"
-            />
+          <Grid item xs={4} style={{ padding: "10px" }}>
+            <ProjectCard title="red" backgroundColor="red" />
           </Grid>
-          <Grid item xs={7}>
-            <Section
-              title="Section 3"
-              subtitle={dummyText}
-              dark={false}
-              id="three"
-            />
+          <Grid item xs={4} style={{ padding: "10px" }}>
+            <ProjectCard title="green" backgroundColor="green" />
           </Grid>
         </Grid>
       </Grid>
