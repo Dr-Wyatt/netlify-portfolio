@@ -1,8 +1,8 @@
 /* normal card css*/
 
 .normal-card {
-    width: 200px;
-    height: 200px;
+    /* width: 90%; */
+    /* height: 200px; */
     display: grid;
     place-items: end center;
     padding: 10px;
@@ -34,11 +34,12 @@
     color: var(--fg);
     width: 300px;
     padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 5px;
     place-self: end center;
 }
 
 .expanded-card p {
     width: 300px;
-    padding: 5px;
     place-self: start center;
 }

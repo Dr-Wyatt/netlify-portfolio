@@ -9,15 +9,15 @@ const App = () => {
       <Grid container>
         <Navbar />
         This is Front Page
-        <Grid container item style={{ justifyContent: "center" }}>
-          <Grid item xs={4} style={{ padding: "10px" }}>
-            <ProjectCard title="blue" backgroundColor="blue" />
+        <Grid container item style={{ justifyContent: "center", alignItems: "center", height: "50vh" }}>
+          <Grid item xs={3} style={{ padding: "10px" }}>
+            <ProjectCard title="Jersey Sponsor"/>
           </Grid>
-          <Grid item xs={4} style={{ padding: "10px" }}>
-            <ProjectCard title="red" backgroundColor="red" />
+          <Grid item xs={3} style={{ padding: "10px" }}>
+            <ProjectCard title="Pups and Cups"/>
           </Grid>
-          <Grid item xs={4} style={{ padding: "10px" }}>
-            <ProjectCard title="green" backgroundColor="green" />
+          <Grid item xs={3} style={{ padding: "10px" }}>
+            <ProjectCard title="To be Decided"/>
           </Grid>
         </Grid>
       </Grid>
