@@ -16,8 +16,10 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import DescriptionRoundedIcon from "@material-ui/icons/DescriptionRounded";
+import PersonRoundedIcon from "@material-ui/icons/PersonRounded";
 import { SocialIcon } from "react-social-icons";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const userStyles = makeStyles((theme: Theme) => ({
   menuButton: {
@@ -65,17 +67,21 @@ const Navbar: React.FC = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Home", "Resume"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index === 0 ? (
-                <HomeRoundedIcon style={{ height: 30, width: 30 }} />
-              ) : (
-                <DescriptionRoundedIcon style={{ height: 30, width: 30 }} />
-              )}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+        {["Home", "About", "Resume"].map((text, index) => (
+          <NavLink to={index === 0 ? '/' : `/${text.toLowerCase()}`} exact style={{ color: '#000000DE', textDecoration: 'none' }} >
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index === 0 ? (
+                  <HomeRoundedIcon style={{ height: 30, width: 30 }} />
+                ) : null || index === 1 ? (
+                  <PersonRoundedIcon style={{ height: 30, width: 30 }} />
+                ) : null || index === 2 ? (
+                  <DescriptionRoundedIcon style={{ height: 30, width: 30 }} />
+                ) : null}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </NavLink>
         ))}
       </List>
       <Divider />
@@ -107,9 +113,7 @@ const Navbar: React.FC = () => {
                 />
               )}
             </ListItemIcon>
-            <ListItemText primary={text}>
-              <a href="https://www.linkedin.com/in/dryuichiwyatt/"></a>
-            </ListItemText>
+            <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>

@@ -11,7 +11,7 @@ const ProjectCardList = ({ info }: { info: ProjectCardInterface[] }) => {
       style={{
         justifyContent: "center",
         alignItems: "center",
-        height: "50vh",
+        height: "30vh",
       }}
     >
       {info.map((cardInfo: ProjectCardInterface) => (
