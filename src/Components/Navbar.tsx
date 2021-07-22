@@ -14,8 +14,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import DescriptionRoundedIcon from "@material-ui/icons/DescriptionRounded";
+import { SocialIcon } from "react-social-icons";
 import React from "react";
 
 const userStyles = makeStyles((theme: Theme) => ({
@@ -64,10 +65,14 @@ const Navbar: React.FC = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Home", "Resume"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              {index === 0 ? (
+                <HomeRoundedIcon style={{ height: 30, width: 30 }} />
+              ) : (
+                <DescriptionRoundedIcon style={{ height: 30, width: 30 }} />
+              )}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -75,12 +80,36 @@ const Navbar: React.FC = () => {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
+        {["LinkedIn", "Github"].map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            component="a"
+            href={
+              index === 0
+                ? "https://www.linkedin.com/in/dryuichiwyatt/"
+                : "https://github.com/Dr-Wyatt"
+            }
+            target="_blank"
+          >
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              {index === 0 ? (
+                <SocialIcon
+                  url="https://www.linkedin.com/in/dryuichiwyatt/"
+                  style={{ height: 30, width: 30 }}
+                  target="_blank"
+                />
+              ) : (
+                <SocialIcon
+                  url="https://github.com/Dr-Wyatt"
+                  style={{ height: 30, width: 30 }}
+                  target="_blank"
+                />
+              )}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={text}>
+              <a href="https://www.linkedin.com/in/dryuichiwyatt/"></a>
+            </ListItemText>
           </ListItem>
         ))}
       </List>
