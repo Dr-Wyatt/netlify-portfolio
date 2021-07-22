@@ -1,10 +1,13 @@
+import React from "react";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { useState } from "react";
-import { Paper } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import "../Styling/project-card.css";
+import { ProjectCardInterface } from "../Interfaces/projectCard";
 
-const Card = ({ title }: { title: string }) => {
+const ProjectCard:React.FC<ProjectCardInterface> = (cardInfo) => {
   const [open, setOpen] = useState(false);
+  console.log("this is cardInfo in project card: ", cardInfo);
   return (
     <AnimateSharedLayout>
       {open ? (
@@ -15,7 +18,7 @@ const Card = ({ title }: { title: string }) => {
           layoutId="expandable-card"
           layout
           transition={{
-            layoutX: { delay:0.1, duration: 0.2 },
+            layoutX: { delay: 0.1, duration: 0.2 },
             layoutY: { duration: 0.2 },
           }}
         >
@@ -28,18 +31,16 @@ const Card = ({ title }: { title: string }) => {
               layoutY: { duration: 0.2 },
             }}
           >
-            {title}
+            {cardInfo.title}
           </motion.h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            aliquam molestiae ratione sint magnam sequi fugiat u llam earum
-            distinctio fuga iure, ad odit repudiandae modi est alias ipsum
-            aperiam. Culpa?
+            {cardInfo.appDescription}
           </p>
         </motion.div>
       ) : (
         /* NORMAL CARD */
-        <Paper elevation={3}>
+        // <Paper elevation={3}>
+        <Card style={{width: "80%", height: "80%", margin: "auto"}}>
           <motion.div
             onClick={() => setOpen(true)}
             className="normal-card"
@@ -58,13 +59,14 @@ const Card = ({ title }: { title: string }) => {
                 layoutY: { duration: 0.2 },
               }}
             >
-              {title}
+              {cardInfo.title}
             </motion.h1>
           </motion.div>
-        </Paper>
+        </Card>
+        // </Paper>
       )}
     </AnimateSharedLayout>
   );
 };
 
-export default Card;
+export default ProjectCard;
