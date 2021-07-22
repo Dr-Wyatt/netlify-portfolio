@@ -1,0 +1,52 @@
+/* normal card css*/
+
+.normal-card {
+    /* width: 90%; */
+    /* height: 200px; */
+    display: grid;
+    place-items: end center;
+    padding: 10px;
+    /* margin: auto; */
+    justify-content: end;
+}
+
+.normal-card h1 {
+    font-size: 18px;
+    color: var(--fg);
+    padding: 5px;
+    place-items: end center;
+    position: relative;
+    top: 30%;
+    left: 4%;
+}
+
+/* expand card css*/
+
+.expanded-card {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    /* width: 500px;
+    height: 300px; */
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    /* border: 5px solid black;  */
+}
+
+.expanded-card-h {
+    font-size: 27px;
+    color: var(--fg);
+    width: 300px;
+    padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+    place-self: end center;
+}
+
+.expanded-card p {
+    width: 300px;
+    place-self: start center;
+}
