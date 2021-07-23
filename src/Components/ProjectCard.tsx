@@ -1,11 +1,21 @@
 import React from "react";
 import { AnimateSharedLayout, motion } from "framer-motion";
 import { useState } from "react";
-import { Card } from "@material-ui/core";
+import { Card, makeStyles, Typography } from "@material-ui/core";
 import "../Styling/project-card.css";
 import { ProjectCardInterface } from "../Interfaces/projectCard";
 
-const ProjectCard:React.FC<ProjectCardInterface> = (cardInfo) => {
+const font = "'Poppins', sans-serif";
+
+const userStyles = makeStyles(() => ({
+  typography: {
+    fontFamily: font,
+    fontSize: 25,
+  },
+}));
+
+const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
+  const classes = userStyles();
   const [open, setOpen] = useState(false);
   console.log("this is cardInfo in project card: ", cardInfo);
   return (
@@ -33,14 +43,12 @@ const ProjectCard:React.FC<ProjectCardInterface> = (cardInfo) => {
           >
             {cardInfo.title}
           </motion.h2>
-          <p>
-            {cardInfo.appDescription}
-          </p>
+          <p>{cardInfo.appDescription}</p>
         </motion.div>
       ) : (
         /* NORMAL CARD */
         // <Paper elevation={3}>
-        <Card style={{width: "80%", height: "80%", margin: "auto"}}>
+        <Card style={{ width: "80%", height: "80%", margin: "auto" }}>
           <motion.div
             onClick={() => setOpen(true)}
             className="normal-card"
@@ -59,7 +67,9 @@ const ProjectCard:React.FC<ProjectCardInterface> = (cardInfo) => {
                 layoutY: { duration: 0.2 },
               }}
             >
-              {cardInfo.title}
+              <Typography className={classes.typography}>
+                {cardInfo.title}
+              </Typography>
             </motion.h1>
           </motion.div>
         </Card>

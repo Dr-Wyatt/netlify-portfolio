@@ -7,6 +7,8 @@ import Home from "./Pages/Home";
 import Resume from "./Pages/Resume";
 import CardInfo from "./Utilities/card-info";
 
+
+
 const App = () => {
   const Info = CardInfo;
   return (
