@@ -4,9 +4,13 @@ import React from "react";
 const font = "'Fahkwang', sans-serif";
 
 const userStyles = makeStyles(() => ({
-  typography: {
+  typographyTitle: {
     fontFamily: font,
     fontSize: 64
+  },
+  typographyBody: {
+    fontFamily: font,
+    fontSize: 30
   }
 }));
 
@@ -15,7 +19,8 @@ const Tidbit = () => {
   return (
     <Grid container style={{ justifyContent: "center" }}>
       <Grid item>
-        <Typography className={classes.typography}>Hi, I'm Daniel</Typography>
+        <Typography className={classes.typographyTitle}>Hi, I'm Daniel</Typography>
+        <Typography className={classes.typographyBody}>I love creating.</Typography>
       </Grid>
     </Grid>
   );
