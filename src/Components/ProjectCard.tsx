@@ -27,21 +27,24 @@ const userStyles = makeStyles(() => ({
     fontSize: 35,
     color: "white",
     margin: "auto",
+    marginBottom: 0,
   },
   infoText: {
     fontFamily: font,
     fontSize: 16,
     color: "white",
     verticalAlign: "middle",
+    textAlign: "left",
   },
   links: {
     fontFamily: font,
     fontSize: 16,
     color: "white",
     textDecoration: "none",
+    height: "100%",
+    margin: 0,
   },
 }));
-
 
 const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
   const classes = userStyles();
@@ -64,9 +67,15 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
             container
             xs={12}
             justify="center"
+            direction="row"
             style={{ marginTop: "100px" }}
           >
-            <Grid container item xs={6} style={{ paddingRight: "10px" }}>
+            <Grid
+              container
+              item
+              xs={5}
+              style={{ paddingRight: "15px", height: "25%" }}
+            >
               <Grid container item xs={12} justify="flex-end">
                 <motion.h2
                   className="expanded-card-h"
@@ -82,18 +91,27 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                   </Typography>
                 </motion.h2>
               </Grid>
-              <Grid container item direction="column" xs={12}>
-                <Grid container item xs={12} justify="flex-end">
-                  <a
-                    href={cardInfo.homePage}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={classes.links}
-                  >
-                    Homepage
-                  </a>
-                </Grid>
-                <Grid container item xs={12} justify="flex-end">
+              <Grid
+                container
+                item
+                direction="column"
+                xs={12}
+                alignItems="flex-end"
+              >
+                {cardInfo.homePage ? (
+                  <Grid container item xs={6} justify="flex-end">
+                    <a
+                      href={cardInfo.homePage}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={classes.links}
+                    >
+                      Homepage
+                    </a>
+                  </Grid>
+                ) : null}
+
+                <Grid container item xs={6} justify="flex-end">
                   <a
                     href={cardInfo.appLink}
                     target="_blank"
@@ -112,14 +130,21 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
               alignItems="center"
               justify="flex-start"
             >
-              <Grid item xs={8}>
-                <Typography className={classes.infoText}>
+              <Grid
+                item
+                xs={8}
+                style={{ paddingLeft: "20px", marginTop: "4.8em" }}
+              >
+                <Typography
+                  className={classes.infoText}
+                  style={{ paddingLeft: "20px" }}
+                >
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
                 <List dense={true}>
                   {cardInfo.explored.map((text) => {
                     return (
-                      <ListItem>
+                      <ListItem style={{ justifyContent: "flex-end" }}>
                         <ListItemIcon style={{ justifyContent: "flex-end" }}>
                           <ArrowForwardIosRoundedIcon
                             style={{ color: "white", paddingRight: "5px" }}
@@ -134,7 +159,6 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                     );
                   })}
                 </List>
-                ;
               </Grid>
             </Grid>
           </Grid>
