@@ -3,7 +3,7 @@ import { ProjectCardInterface } from "../Interfaces/projectCard";
 const cardInfo: Array<ProjectCardInterface> = [
   {
     title: "Jersey Sponsor",
-    iconURL: "",
+    iconURL: "JerseySponsor",
     appDescription:
       "Jersey Sponsor is a Web and Mobile app for Athletes of all levels to receive sponsorships on their terms. Their goal is to give the power back to the Athletes.",
     homePage: "https://www.jerseysponsor.com/",
@@ -18,7 +18,7 @@ const cardInfo: Array<ProjectCardInterface> = [
   },
   {
     title: "Pups and Cups",
-    iconURL: "",
+    iconURL: "PawPrint",
     appDescription: "Find your local coffee shop and nearby dog parks!",
     appLink: "https://compassionate-swirles-7b34e8.netlify.app/",
     explored: [
@@ -32,10 +32,10 @@ const cardInfo: Array<ProjectCardInterface> = [
   },
   {
     title: "Likely",
-    iconURL: "",
+    iconURL: "Likely",
     appDescription: "Likely is an app that gives small groups the opportunity to plan events, chat, post photos, and assign hilarious superlatives to one another on the go. It's all the best parts of Facebook with the added benefit of not having to actually be on Facebook!",
     appLink: "https://likely-b2m.herokuapp.com/",
-    explored: ["Contributed to Database architecture and schema", "Implemented Login flow using passport", "Structured Backend API's for proper data flow throughout application", "Implemented Error handling on forms"],
+    explored: ["Contributed to Database architecture and schema", "Implemented Login flow", "Structured Backend API's for proper data flow throughout application", "Implemented Error handling on forms"],
     appInfo: "Likely is the final group project from the Northwestern Full Stack Bootcamp I attended. It was great exposure to working in a team setting and collaborating with my peers. Working on a few key aspects of the app and then seeing everyone's contributions come together to create a fully functioning app was an incredible joy.\nPlease create your own login (dummy emails work just fine), then create a group to add other stock users to fully experience this app. If you don't feel like creating an account, please login as (email: kramer@email.com, password: kramer), to enjoy this app!",
   },
 ];

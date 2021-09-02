@@ -15,6 +15,9 @@ import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounde
 import "../Styling/project-card.css";
 import { ProjectCardInterface } from "../Interfaces/projectCard";
 import AppInfoText from "./AppInfoText";
+import JerseySponsoLogo from "../Assets/JerseySponsorLogo";
+import PetsIcon from "@material-ui/icons/Pets";
+import LikelyLogo from "../Assets/LikelyLogo";
 
 const font = "'Poppins', sans-serif";
 
@@ -78,6 +81,15 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
               style={{ paddingRight: "15px", height: "25%" }}
             >
               <Grid container item xs={12} justify="flex-end">
+                <Grid container item xs={2} justify="center" alignItems="center">
+                  {cardInfo.iconURL === "JerseySponsor" ? (
+                    <JerseySponsoLogo />
+                  ) : null || cardInfo.iconURL === "PawPrint" ? (
+                    <PetsIcon style={{ fontSize: 40 }} />
+                  ) : null || cardInfo.iconURL === "Likely" ? (
+                    <LikelyLogo />
+                  ) : null}
+                </Grid>
                 <motion.h2
                   className="expanded-card-h"
                   layoutId="expandable-card-h"
@@ -143,8 +155,8 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
                 {cardInfo.appInfo?.includes("\n") ? (
-                  <AppInfoText appInfo={cardInfo.appInfo}/>
-                  ) : (
+                  <AppInfoText appInfo={cardInfo.appInfo} />
+                ) : (
                   <Typography
                     className={classes.infoText}
                     style={{ paddingLeft: "20px" }}
