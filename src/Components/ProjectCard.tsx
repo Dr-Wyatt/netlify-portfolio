@@ -14,6 +14,7 @@ import {
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 import "../Styling/project-card.css";
 import { ProjectCardInterface } from "../Interfaces/projectCard";
+import AppInfoText from "./AppInfoText";
 
 const font = "'Poppins', sans-serif";
 
@@ -141,6 +142,17 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                 >
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
+                {cardInfo.appInfo?.includes("\n") ? (
+                  <AppInfoText appInfo={cardInfo.appInfo}/>
+                  ) : (
+                  <Typography
+                    className={classes.infoText}
+                    style={{ paddingLeft: "20px" }}
+                  >
+                    <p>{cardInfo.appInfo}</p>
+                  </Typography>
+                )}
+
                 <List dense={true}>
                   {cardInfo.explored.map((text) => {
                     return (
