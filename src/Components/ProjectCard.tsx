@@ -55,8 +55,8 @@ const userStyles = makeStyles(() => ({
 const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
   const classes = userStyles();
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('xs'));
-  
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
   const [open, setOpen] = useState(false);
   return (
     <AnimateSharedLayout>
@@ -83,11 +83,23 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
               container
               item
               xs={12}
-              sm={5}
-              style={{ paddingRight: (matches ? "0px" : "15px"), height: "25%" }}
+              sm={4}
+              style={{ paddingRight: matches ? "15px" : "0px", height: "25%" }}
             >
-              <Grid container item xs={12} justify={matches ? "center" : "flex-end"}>
-                <Grid container item xs={2} justify="center" alignItems="center" style={{marginRight: "10px"}}>
+              <Grid
+                container
+                item
+                xs={12}
+                justify={matches ? "flex-end" : "center"}
+              >
+                <Grid
+                  container
+                  item
+                  xs={2}
+                  justify="center"
+                  alignItems="center"
+                  style={{ marginRight: "10px" }}
+                >
                   {cardInfo.iconURL === "JerseySponsor" ? (
                     <JerseySponsoLogo />
                   ) : null || cardInfo.iconURL === "PawPrint" ? (
@@ -115,10 +127,15 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                 item
                 direction="column"
                 xs={12}
-                alignItems={matches ? "center" : "flex-end"}
+                alignItems={matches ? "flex-end" : "center"}
               >
                 {cardInfo.homePage ? (
-                  <Grid container item xs={6} justify={matches ? "center" : "flex-end"}>
+                  <Grid
+                    container
+                    item
+                    xs={6}
+                    justify={matches ? "flex-end" : "center"}
+                  >
                     <a
                       href={cardInfo.homePage}
                       target="_blank"
@@ -130,7 +147,12 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                   </Grid>
                 ) : null}
 
-                <Grid container item xs={6} justify={matches ? "center" : "flex-end"}>
+                <Grid
+                  container
+                  item
+                  xs={6}
+                  justify={matches ? "flex-end" : "center"}
+                >
                   <a
                     href={cardInfo.appLink}
                     target="_blank"
@@ -146,19 +168,20 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
               container
               item
               xs={12}
-              sm={6}
+              sm={7}
               alignItems="center"
-              justify={matches ? "center" : "flex-end"}
+              justify={matches ? "flex-start" : "center"}
+              style={{ paddingLeft: matches ? "20px" : "0px" }}
             >
               <Grid
                 item
                 xs={12}
                 sm={8}
-                style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px"), marginTop: (matches ? "0px" : "4.8em") }}
+                style={{ marginTop: matches ? "4.8em" : "0px" }}
               >
                 <Typography
                   className={classes.infoText}
-                  style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px") }}
+                  style={{ padding: matches ? "5px" : "0px 10px" }}
                 >
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
@@ -167,7 +190,10 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                 ) : (
                   <Typography
                     className={classes.infoText}
-                    style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px") }}
+                    style={{
+                      paddingLeft: matches ? "20px" : "0px",
+                      padding: matches ? "5px" : "0px 10px",
+                    }}
                   >
                     <p>{cardInfo.appInfo}</p>
                   </Typography>

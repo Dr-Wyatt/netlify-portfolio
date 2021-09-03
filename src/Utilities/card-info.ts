@@ -14,7 +14,7 @@ const cardInfo: Array<ProjectCardInterface> = [
       "Developed the API endpoint service for Notifications",
       "Built out the view for the a key feature in the Mobile App",
     ],
-    appInfo: "Jersey Sponsor was an application that I worked as a contractor part time. The front end, back end and mobile app were built in 2 months, so the pace was extremely fast. Working on this project gave me exposure to Typescript, better styling tools and techniques, and implementing better backend structures.",
+    appInfo: "Jersey Sponsor was an application that I worked as a contractor part time. The front end, back end and mobile app were built in 3 months, so the pace was extremely fast. Working on this project gave me exposure to Typescript, better styling tools and techniques, and implementing better backend structures.",
   },
   {
     title: "Pups and Cups",
