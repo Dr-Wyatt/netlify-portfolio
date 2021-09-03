@@ -35,7 +35,7 @@ const AppInfoText = (props: { appInfo: string }) => {
       className={classes.infoText}
       style={{
         paddingLeft: matches ? "0px" : "20px",
-        padding: matches ? "5px" : "0px 10px",
+        padding: matches ? "0px" : "0px 10px",
       }}
     >
       {props.appInfo.split("\n").map((text) => {
