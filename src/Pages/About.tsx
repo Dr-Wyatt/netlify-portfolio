@@ -15,6 +15,12 @@ const userStyles = makeStyles(() => ({
     fontSize: 20,
     // textAlign: "left",
   },
+  typographyBodyXSmall: {
+    fontFamily: font,
+    fontSize: 18,
+    textAlign: "left", 
+    padding: "10px",
+  },
   typographyName: {
     fontFamily: font,
     fontSize: 35,
@@ -35,6 +41,7 @@ const About = () => {
   const classes = userStyles();
   const theme = useTheme();
   const imageQuery = useMediaQuery(theme.breakpoints.up("lg"));
+  const matches = useMediaQuery(theme.breakpoints.up("xs"));
   return (
     <Grid
       container
@@ -53,7 +60,7 @@ const About = () => {
           ></img>
         </Grid>
         <Grid container item xs={12} md={7} alignItems="center">
-          <Typography className={classes.typographyBody} paragraph={true}>
+          <Typography className={matches ? classes.typographyBodyXSmall : classes.typographyBody} paragraph={true} >
             Full Stack Web Developer and graduate of Northwestern University
             MERN Full Stack Bootcamp. Through both my work and school experience
             I have strengthened my skills in communicating with clients to meet

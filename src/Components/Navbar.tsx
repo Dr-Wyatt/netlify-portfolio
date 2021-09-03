@@ -11,6 +11,8 @@ import {
   makeStyles,
   Theme,
   Toolbar,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { SocialIcon } from "react-social-icons";
@@ -57,6 +59,9 @@ const Navbar: React.FC = () => {
   const [state, setState] = React.useState({
     right: false,
   });
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('xs'));
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -136,7 +141,7 @@ const Navbar: React.FC = () => {
 
   return (
     <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
+      <Toolbar disableGutters={matches ? true : false}>
         <Grid container xs={12} justify="flex-end">
           <React.Fragment key="right">
             <IconButton
