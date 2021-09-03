@@ -96,6 +96,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                   container
                   item
                   xs={2}
+                  sm={1}
                   justify="center"
                   alignItems="center"
                   style={{ marginRight: "10px" }}
@@ -181,7 +182,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
               >
                 <Typography
                   className={classes.infoText}
-                  style={{ padding: matches ? "5px" : "0px 10px" }}
+                  style={{ padding: matches ? "0px" : "0px 10px" }}
                 >
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
@@ -192,7 +193,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                     className={classes.infoText}
                     style={{
                       paddingLeft: matches ? "20px" : "0px",
-                      padding: matches ? "5px" : "0px 10px",
+                      padding: matches ? "0px" : "0px 10px",
                     }}
                   >
                     <p>{cardInfo.appInfo}</p>
