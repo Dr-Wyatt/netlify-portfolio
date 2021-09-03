@@ -13,26 +13,40 @@ import {
   Toolbar,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-import DescriptionRoundedIcon from "@material-ui/icons/DescriptionRounded";
-import PersonRoundedIcon from "@material-ui/icons/PersonRounded";
 import { SocialIcon } from "react-social-icons";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+const font = "'Poppins', sans-serif";
+
 const userStyles = makeStyles((theme: Theme) => ({
   menuButton: {
     marginRight: theme.spacing(1),
+    color: "#383838",
   },
   appBar: {
-    background: theme.palette.primary.light,
-    color: theme.palette.primary.dark,
+    background: "white",
+    color: "gray",
   },
   list: {
     width: 250,
+    height: "100vh",
+    background: "#383838",
   },
   fullList: {
     width: "auto",
+  },
+  typography: {
+    fontFamily: font,
+    fontSize: 25,
+    color: "white",
+  },
+  listItem: {
+    padding: 8,
+    width: 50,
+  },
+  listItemIcon: {
+    minWidth: 50,
   },
 }));
 
@@ -67,27 +81,26 @@ const Navbar: React.FC = () => {
     >
       <List>
         {["Home", "About", "Resume"].map((text, index) => (
-          <NavLink to={index === 0 ? '/' : `/${text.toLowerCase()}`} exact style={{ color: '#000000DE', textDecoration: 'none' }} >
+          <NavLink
+            to={index === 0 ? "/" : `/${text.toLowerCase()}`}
+            exact
+            style={{
+              textDecoration: "none",
+            }}
+          >
             <ListItem button key={text}>
-              <ListItemIcon>
-                {index === 0 ? (
-                  <HomeRoundedIcon style={{ height: 30, width: 30 }} />
-                ) : null || index === 1 ? (
-                  <PersonRoundedIcon style={{ height: 30, width: 30 }} />
-                ) : null || index === 2 ? (
-                  <DescriptionRoundedIcon style={{ height: 30, width: 30 }} />
-                ) : null}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText
+                primary={text}
+                classes={{ primary: classes.typography }}
+              />
             </ListItem>
           </NavLink>
         ))}
       </List>
       <Divider />
-      <List>
+      <List style={{ display: "flex", flexDirection: "row" }}>
         {["LinkedIn", "Github"].map((text, index) => (
           <ListItem
-            button
             key={text}
             component="a"
             href={
@@ -96,23 +109,25 @@ const Navbar: React.FC = () => {
                 : "https://github.com/Dr-Wyatt"
             }
             target="_blank"
+            classes={{ root: classes.listItem }}
+            disableGutters={true}
           >
-            <ListItemIcon>
+            <ListItemIcon classes={{ root: classes.listItemIcon }}>
               {index === 0 ? (
                 <SocialIcon
                   url="https://www.linkedin.com/in/dryuichiwyatt/"
-                  style={{ height: 30, width: 30 }}
+                  style={{ height: 40, width: 40 }}
                   target="_blank"
                 />
               ) : (
                 <SocialIcon
                   url="https://github.com/Dr-Wyatt"
-                  style={{ height: 30, width: 30 }}
+                  style={{ height: 40, width: 40 }}
                   target="_blank"
                 />
               )}
             </ListItemIcon>
-            <ListItemText primary={text} />
+            {/* <ListItemText primary={text} classes={{primary:classes.typography}}/> */}
           </ListItem>
         ))}
       </List>
@@ -127,13 +142,11 @@ const Navbar: React.FC = () => {
             <IconButton
               edge="end"
               className={classes.menuButton}
-              color="inherit"
               aria-label="menu"
               onClick={toggleDrawer("right", true)}
             >
               <MenuIcon />
             </IconButton>
-            {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
             <Drawer
               anchor="right"
               open={state["right"]}

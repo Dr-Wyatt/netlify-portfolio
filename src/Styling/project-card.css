@@ -11,8 +11,8 @@
 }
 
 .normal-card h1 {
-    font-size: 18px;
-    color: var(--fg);
+    /* font-size: 18px;
+    color: var(--fg); */
     padding: 5px;
     place-items: end center;
     position: relative;
@@ -31,22 +31,22 @@
     /* width: 500px;
     height: 300px; */
     z-index: 1;
-    display: grid;
-    place-items: center;
-    /* border: 5px solid black;  */
+    /* display: grid; */
+    /* place-items: center; */
+    /* justify-content: center; */
+    background-color: #383838;
 }
 
 .expanded-card-h {
-    font-size: 27px;
+    /* font-size: 27px; */
     color: var(--fg);
-    width: 300px;
-    padding: 5px;
-    margin-top: 50px;
-    margin-bottom: 5px;
-    place-self: end center;
+    /* width: 300px; */
+    /* padding: 5px; */
+    text-align: center;
+    /* margin: auto; */
 }
 
 .expanded-card p {
-    width: 300px;
+    /* width: 300px; */
     place-self: start center;
 }
