@@ -10,6 +10,8 @@ import {
   ListItemText,
   makeStyles,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import ArrowForwardIosRoundedIcon from "@material-ui/icons/ArrowForwardIosRounded";
 import "../Styling/project-card.css";
@@ -52,6 +54,9 @@ const userStyles = makeStyles(() => ({
 
 const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
   const classes = userStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('xs'));
+  
   const [open, setOpen] = useState(false);
   return (
     <AnimateSharedLayout>
@@ -77,11 +82,12 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
             <Grid
               container
               item
-              xs={5}
-              style={{ paddingRight: "15px", height: "25%" }}
+              xs={12}
+              sm={5}
+              style={{ paddingRight: (matches ? "0px" : "15px"), height: "25%" }}
             >
-              <Grid container item xs={12} justify="flex-end">
-                <Grid container item xs={2} justify="center" alignItems="center">
+              <Grid container item xs={12} justify={matches ? "center" : "flex-end"}>
+                <Grid container item xs={2} justify="center" alignItems="center" style={{marginRight: "10px"}}>
                   {cardInfo.iconURL === "JerseySponsor" ? (
                     <JerseySponsoLogo />
                   ) : null || cardInfo.iconURL === "PawPrint" ? (
@@ -109,10 +115,10 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                 item
                 direction="column"
                 xs={12}
-                alignItems="flex-end"
+                alignItems={matches ? "center" : "flex-end"}
               >
                 {cardInfo.homePage ? (
-                  <Grid container item xs={6} justify="flex-end">
+                  <Grid container item xs={6} justify={matches ? "center" : "flex-end"}>
                     <a
                       href={cardInfo.homePage}
                       target="_blank"
@@ -124,7 +130,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                   </Grid>
                 ) : null}
 
-                <Grid container item xs={6} justify="flex-end">
+                <Grid container item xs={6} justify={matches ? "center" : "flex-end"}>
                   <a
                     href={cardInfo.appLink}
                     target="_blank"
@@ -139,18 +145,20 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
             <Grid
               container
               item
-              xs={6}
+              xs={12}
+              sm={6}
               alignItems="center"
-              justify="flex-start"
+              justify={matches ? "center" : "flex-end"}
             >
               <Grid
                 item
-                xs={8}
-                style={{ paddingLeft: "20px", marginTop: "4.8em" }}
+                xs={12}
+                sm={8}
+                style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px"), marginTop: (matches ? "0px" : "4.8em") }}
               >
                 <Typography
                   className={classes.infoText}
-                  style={{ paddingLeft: "20px" }}
+                  style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px") }}
                 >
                   <p>{cardInfo.appDescription}</p>
                 </Typography>
@@ -159,7 +167,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                 ) : (
                   <Typography
                     className={classes.infoText}
-                    style={{ paddingLeft: "20px" }}
+                    style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px") }}
                   >
                     <p>{cardInfo.appInfo}</p>
                   </Typography>

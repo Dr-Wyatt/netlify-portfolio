@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography, useMediaQuery, useTheme } from "@material-ui/core";
 import React from "react";
 
 const font = "'Poppins', sans-serif";
@@ -23,8 +23,10 @@ const userStyles = makeStyles(() => ({
 
 const AppInfoText = (props: {appInfo: string}) => {
   const classes = userStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('xs'));
   return (
-    <Typography className={classes.infoText} style={{ paddingLeft: "20px" }}>
+    <Typography className={classes.infoText} style={{ paddingLeft: (matches ? "0px" : "20px"), padding: (matches ? "0px 5px" : "0px")}}>
         {
             props.appInfo.split('\n').map((text) => {
                 return <p>{text}</p>

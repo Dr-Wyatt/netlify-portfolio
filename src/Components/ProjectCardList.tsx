@@ -17,7 +17,8 @@ const ProjectCardList = ({ info }: { info: ProjectCardInterface[] }) => {
       {info.map((cardInfo: ProjectCardInterface) => (
         <Grid
           item
-          xs={3}
+          xs={12}
+          sm={3}
           style={{ padding: "10px", justifyContent: "center" }}
           key={info.indexOf(cardInfo)}
         >
