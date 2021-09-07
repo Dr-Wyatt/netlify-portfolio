@@ -40,4 +40,17 @@ const cardInfo: Array<ProjectCardInterface> = [
   },
 ];
 
+/*
+
+Unorthodox background offers fresh perspective
+
+I'm a goal oriented web developer. That means when I'm given a project, I want to fully understand the end result, and then go above and beyond those basic requests. I offer a fresh perspective
+
+Help people achieve their goals but also provide alternative options/perspective on reaching the desired outcome
+
+problem solving
+
+like challenges
+*/
+
 export default cardInfo;
