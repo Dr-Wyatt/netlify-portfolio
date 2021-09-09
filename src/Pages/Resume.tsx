@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, useMediaQuery, useTheme } from "@material-ui/core";
-import { PDFReader } from "react-read-pdf";
 import { MobilePDFReader } from "react-read-pdf";
 import pdfFile from "../Utilities/Daniel-Wyatt-Resume.pdf";
 const Resume = () => {
@@ -14,10 +13,15 @@ const Resume = () => {
       style={{ justifyContent: "center", marginTop: "80px", height: "100vh" }}
       xs={12}
     >
-      {
-        resumeQuery ? <PDFReader url={pdfFile} />: 
+      {resumeQuery ? (
+        <iframe
+          src={`${pdfFile}#view=fitH`}
+          style={{ width: "80%", height: "90%", border: "none" }}
+          title="Daniel Wyatt Resume"
+        ></iframe>
+      ) : (
         <MobilePDFReader url={pdfFile} />
-      }
+      )}
     </Grid>
   );
 };
