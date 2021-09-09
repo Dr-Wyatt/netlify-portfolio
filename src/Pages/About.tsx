@@ -61,7 +61,18 @@ const About = () => {
         </Grid>
         <Grid container item xs={12} md={7} alignItems="center">
           <Typography className={matches ? classes.typographyBodyXSmall : classes.typographyBody} paragraph={true} >
-            Full Stack Web Developer and graduate of Northwestern University
+            I'm Daniel, a Full Stack Developer. 
+
+            Tough challenges excite me and I love to solve complex problems. 
+            I'm a goal oriented web developer. That means when I'm given a project, I want to fully understand the end result, and then go above and beyond those basic requests. 
+            I offer a fresh perspective with my unorthodox background, and allows for me to think outside the box. 
+            I love helping people achieve their goals. 
+
+            I enjoy working within the MERN stack, especially with Typescript, but do have commercial experience with C#, Specflow, and Selenium 
+
+            Outside of work, I love playing video games, streaming shows with my wife and playing with my dog, Benny.
+
+            {/* Full Stack Web Developer and graduate of Northwestern University
             MERN Full Stack Bootcamp. Through both my work and school experience
             I have strengthened my skills in communicating with clients to meet
             their needs, as well as creatively worked to solve problems both in
@@ -70,7 +81,7 @@ const About = () => {
             which I have used in several projects such as authenticated login
             and backend data manipulation in Sahara and Likely, and aim to
             improve upon to build meaningful applications for practical use in
-            the workplace.
+            the workplace. */}
           </Typography>
         </Grid>
       </Grid>
