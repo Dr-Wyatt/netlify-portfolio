@@ -2,7 +2,6 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import pdfFile from "../Utilities/Daniel-Wyatt-Resume.pdf";
 const Resume = () => {
-
   return (
     <Grid
       container
