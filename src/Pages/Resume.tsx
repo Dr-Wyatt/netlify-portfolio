@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Grid } from "@material-ui/core";
 import pdfFile from "../Utilities/Daniel-Wyatt-Resume.pdf";
 const Resume = () => {
@@ -14,6 +14,7 @@ const Resume = () => {
         <iframe
           src={`${pdfFile}#view=fitH`}
           style={{width: "80%", height: "90%", border: "none"}}
+          title="Daniel Wyatt Resume"
         ></iframe>
       </Grid>
     </Grid>
