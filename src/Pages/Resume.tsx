@@ -1,10 +1,21 @@
+import React, { useState } from "react";
 import { Grid } from "@material-ui/core";
-import React from "react";
-
+import pdfFile from "../Utilities/Daniel-Wyatt-Resume.pdf";
 const Resume = () => {
+
   return (
-    <Grid container item style={{justifyContent: "center", marginTop: "100px"}}>
-      <Grid item>This is Resume Page</Grid>
+    <Grid
+      container
+      item
+      style={{ justifyContent: "center", marginTop: "80px", height: "100vh" }}
+      xs={12}
+    >
+      <Grid item xs={12}>
+        <iframe
+          src={`${pdfFile}#view=fitH`}
+          style={{width: "80%", height: "90%", border: "none"}}
+        ></iframe>
+      </Grid>
     </Grid>
   );
 };
