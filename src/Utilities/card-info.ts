@@ -9,13 +9,13 @@ const cardInfo: Array<ProjectCardInterface> = [
     homePage: "https://www.jerseysponsor.com/",
     appLink: "https://jerseysponsor.app/signup",
     explored: [
-      "Contributed to creating the Database Schema surrounding Notificaitons, Athlete Lineups, Social Media Accounts and Community Activity",
+      "Contributed to creating the Database Schema surrounding Notifications, Athlete Lineups, Social Media Accounts and Community Activity",
       "Developed the API endpoint service for capturing Athlete's Social Media followers",
       "Developed the API endpoint service for Notifications",
       "Developed the Database service for Community Activity",
       "Built out the view for the Proposals feature in the Mobile App",
     ],
-    appInfo: "I worked on the Jersey Sponsor application as a contractor. The front end, back end and mobile app were all built in 3 months, so the pace was extremely fast. Working on this project gave me exposure to Typescript, better styling tools and techniques, and implementing better backend structures.",
+    appInfo: "I worked on the Jersey Sponsor application as a contractor. The front end, back end and mobile app were all built in 2 months, so the pace was extremely fast. Working on this project gave me exposure to Typescript, better styling tools and techniques, and implementing better backend structures.",
   },
   {
     title: "Pups and Cups",
