@@ -49,6 +49,9 @@ const userStyles = makeStyles(() => ({
     textDecoration: "none",
     height: "100%",
     margin: 0,
+    '&:hover': {
+      textDecoration: 'underline',
+   }
   },
 }));
 
@@ -160,7 +163,7 @@ const ProjectCard: React.FC<ProjectCardInterface> = (cardInfo) => {
                     rel="noreferrer"
                     className={classes.links}
                   >
-                    Staging Ground
+                    View the App
                   </a>
                 </Grid>
               </Grid>
